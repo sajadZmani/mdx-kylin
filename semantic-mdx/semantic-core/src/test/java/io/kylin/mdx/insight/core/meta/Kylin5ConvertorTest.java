@@ -23,11 +23,23 @@ import io.kylin.mdx.insight.common.json.JSONObject;
 import io.kylin.mdx.insight.core.model.kylin.KylinColumnDesc;
 import io.kylin.mdx.insight.core.model.kylin.KylinCubeDesc;
 import io.kylin.mdx.insight.core.model.kylin.KylinDataModelDesc;
+import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /** Parsing of Kylin 5 v2-compatible REST responses (shapes taken from the kylin5 branch controllers). */
 public class Kylin5ConvertorTest {
+
+    @BeforeClass
+    public static void setUp() {
+        System.setProperty("MDX_HOME", "src/test/resources/kylin/");
+    }
+
+    @AfterClass
+    public static void tearDown() {
+        System.clearProperty("MDX_HOME");
+    }
 
     private static final String CUBE_DESC = "{\"code\":\"000\",\"msg\":\"\",\"data\":{\"cube\":{"
             + "\"uuid\":\"u1\",\"name\":\"ssb_model\","

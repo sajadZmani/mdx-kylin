@@ -1,0 +1,64 @@
+# Test environment: Kylin 5 standalone + MySQL (MDX metadata) + MDX for Kylin (kylin5-port).
+#   docker compose up -d --build
+# Kylin UI : http://localhost:7070/kylin   (ADMIN / KYLIN)
+# MDX UI   : http://localhost:7080/        (log in with a Kylin user, e.g. ADMIN / KYLIN)
+# Excel    : http://<host>:7080/mdx/xmla/<project>
+# Requirements: Docker with >= 12 GB RAM and ~15 GB disk (the Kylin image alone is ~3.9 GB compressed).
+services:
+  kylin:
+    image: apachekylin/apache-kylin-standalone:5.0.2-GA
+    container_name: kylin5
+    hostname: kylin
+    ports:
+      - "7070:7070"   # Kylin web/REST
+      - "8088:8088"   # YARN RM (job logs)
+    deploy:
+      resources:
+        limits:
+          memory: 10g
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -o /dev/null http://localhost:7070/kylin/index.html"]
+      interval: 30s
+      timeout: 10s
+      retries: 40
+      start_period: 300s
+
+  mdx-db:
+    image: mysql:8.0.40
+    container_name: mdx-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MDX_DB_ROOT_PASSWORD:-change-me-root}
+      MYSQL_DATABASE: insight
+      MYSQL_USER: mdx
+      MYSQL_PASSWORD: ${MDX_DB_PASSWORD:-change-me-mdx}
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_bin", "--lower_case_table_names=1"]
+    volumes:
+      - mdx-db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      retries: 30
+
+  mdx:
+    build: .
+    image: mdx-kylin:kylin5
+    container_name: mdx
+    depends_on:
+      mdx-db:
+        condition: service_healthy
+      kylin:
+        condition: service_healthy
+    environment:
+      KYLIN_HOST: kylin
+      KYLIN_PORT: "7070"
+      KYLIN_VERSION: "5"
+      MDX_DB_HOST: mdx-db
+      MDX_DB_PORT: "3306"
+      MDX_DB_NAME: insight
+      MDX_DB_USER: mdx
+      MDX_DB_PASSWORD: ${MDX_DB_PASSWORD:-change-me-mdx}
+    ports:
+      - "7080:7080"
+
+volumes:
+  mdx-db-data:
