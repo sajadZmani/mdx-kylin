@@ -118,3 +118,23 @@ semantic-mdx/semantic-server/src/main/resources/static/*
 semantic-mdx/semantic-server/src/main/webapp/WEB-INF/schema/
 semantic-mdx/semantic-server/src/main/webapp/WEB-INF/*_datasources.xml
 /build/Kylin-MDX-*/
+
+# ---- kylin5-port: local / generated files ----
+# XMLA smoke-test responses and collected logs (scripts/xmla-smoke.sh, TESTING.md §7)
+xmla-out/
+mdx-logs/
+mdx.log
+kylin.log
+# docker compose secrets (.env.example is the template)
+.env.local
+docker-compose.override.yml
+# web client build output
+client/build/
+# editors / local tooling
+.vscode/
+.claude/
+*.swp
+Thumbs.db
+# surefire/jacoco output outside target/
+*.exec
+hs_err_pid*.log
