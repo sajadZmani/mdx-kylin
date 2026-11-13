@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.server.bean.dto;
 
-import com.alibaba.fastjson.JSON;
+import io.kylin.mdx.insight.common.json.JSON;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.kylin.mdx.insight.core.entity.CustomHierarchy;
 import io.kylin.mdx.insight.core.entity.TranslationEntity;

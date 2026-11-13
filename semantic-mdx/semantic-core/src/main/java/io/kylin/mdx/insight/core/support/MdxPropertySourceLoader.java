@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.core.support;
 
-import com.alibaba.fastjson.JSONObject;
+import io.kylin.mdx.insight.common.json.JSONObject;
 import io.kylin.mdx.insight.common.PwdDecryptException;
 import io.kylin.mdx.insight.common.SemanticConfig;
 import io.kylin.mdx.insight.common.SemanticConstants;

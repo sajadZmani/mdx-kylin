@@ -20,7 +20,7 @@
 package io.kylin.mdx.insight.server.service;
 
 
-import com.alibaba.fastjson.JSON;
+import io.kylin.mdx.insight.common.json.JSON;
 import io.kylin.mdx.insight.common.PwdDecryptException;
 import io.kylin.mdx.insight.common.SemanticConfig;
 import io.kylin.mdx.insight.common.SemanticConstants;

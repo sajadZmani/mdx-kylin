@@ -254,9 +254,6 @@ mondrian/rolap/RolapCubeUsages.java"/>
   </path>
 
   <target name="define-tasks" depends="prepare">
-    <taskdef name="javacup" classname="java_cup.JavaCUPTask">
-      <classpath path="${classpath}"/>
-    </taskdef>
     <taskdef name="xomgen" classname="org.eigenbase.xom.XOMGenTask">
       <classpath path="${classpath}"/>
     </taskdef>

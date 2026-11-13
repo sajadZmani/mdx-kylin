@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.server.bean.dto;
 
-import com.alibaba.fastjson.JSONArray;
+import io.kylin.mdx.insight.common.json.JSONArray;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.kylin.mdx.insight.common.SemanticException;
 import io.kylin.mdx.insight.core.entity.DatasetEntity;

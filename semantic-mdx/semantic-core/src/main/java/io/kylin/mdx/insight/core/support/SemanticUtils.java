@@ -19,8 +19,8 @@
 
 package io.kylin.mdx.insight.core.support;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import io.kylin.mdx.insight.common.json.JSON;
+import io.kylin.mdx.insight.common.json.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.kylin.mdx.insight.common.SemanticConstants;

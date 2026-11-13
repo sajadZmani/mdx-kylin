@@ -19,7 +19,6 @@
 
 package io.kylin.mdx.insight.core.sync;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.kylin.mdx.insight.common.SemanticConstants;
 import io.kylin.mdx.insight.common.util.Utils;
@@ -39,29 +38,23 @@ public class DatasetBrokenInfo {
     private List<BrokenInfo> models;
 
     @JsonProperty("dimension_tables")
-    @JSONField(name = "dimension_tables")
     private List<BrokenInfo> dimensionTables;
 
     @JsonProperty("hierarchys")
-    @JSONField(name = "hierarchys")
     private List<BrokenInfo> hierarchies;
 
     @JsonProperty("dimension_cols")
-    @JSONField(name = "dimension_cols")
     private List<BrokenInfo> dimensionCols;
 
     private List<BrokenInfo> measures;
 
     @JsonProperty("name_columns")
-    @JSONField(name = "name_columns")
     private List<BrokenInfo> nameColumns;
 
     @JsonProperty("value_columns")
-    @JSONField(name = "value_columns")
     private List<BrokenInfo> valueColumns;
 
     @JsonProperty("property")
-    @JSONField(name = "property")
     private List<BrokenInfo> property;
 
     public List<String> extractBrokenModels() {

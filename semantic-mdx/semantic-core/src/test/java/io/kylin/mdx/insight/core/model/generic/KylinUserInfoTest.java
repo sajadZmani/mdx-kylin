@@ -1,7 +1,7 @@
 package io.kylin.mdx.insight.core.model.generic;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import io.kylin.mdx.insight.common.json.JSON;
+import io.kylin.mdx.insight.common.json.JSONObject;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

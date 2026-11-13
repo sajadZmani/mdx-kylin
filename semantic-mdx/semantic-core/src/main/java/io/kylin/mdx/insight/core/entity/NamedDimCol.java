@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.core.entity;
 
-import com.alibaba.fastjson.JSON;
+import io.kylin.mdx.insight.common.json.JSON;
 import io.kylin.mdx.insight.core.model.generic.ColumnInfo;
 import io.kylin.mdx.insight.core.model.semantic.ModelColumnIdentity;
 import io.kylin.mdx.insight.core.support.SemanticUtils;

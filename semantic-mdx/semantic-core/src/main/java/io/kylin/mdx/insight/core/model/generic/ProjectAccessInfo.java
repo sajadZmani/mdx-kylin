@@ -20,7 +20,6 @@
 
 package io.kylin.mdx.insight.core.model.generic;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,7 +31,6 @@ import java.util.List;
 public class ProjectAccessInfo {
 
     @JsonProperty("total_size")
-    @JSONField(name = "total_size")
     private int totalSize;
 
     private int offset;

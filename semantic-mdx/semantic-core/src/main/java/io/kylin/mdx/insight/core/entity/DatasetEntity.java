@@ -19,8 +19,8 @@
 
 package io.kylin.mdx.insight.core.entity;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.annotation.JSONField;
+import io.kylin.mdx.insight.common.json.JSON;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -98,7 +98,7 @@ public class DatasetEntity {
     @Data
     public static class ExtendHelper {
 
-        @JSONField(name = "model_aliases")
+        @JsonProperty("model_aliases")
         private List<ModelAlias> modelAliasList;
 
         public void addModelAlias(String modelName, String modelAlias, TranslationEntity translation) {

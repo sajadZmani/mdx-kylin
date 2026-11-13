@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.engine.manager;
 
-import com.alibaba.fastjson.JSON;
+import io.kylin.mdx.insight.common.json.JSON;
 import io.kylin.mdx.insight.common.SemanticException;
 import io.kylin.mdx.insight.core.entity.DatasetEntity;
 import io.kylin.mdx.insight.core.model.semantic.DatasetStatus;

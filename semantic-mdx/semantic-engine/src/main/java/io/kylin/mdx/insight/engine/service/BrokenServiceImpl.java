@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.engine.service;
 
-import com.alibaba.fastjson.JSON;
+import io.kylin.mdx.insight.common.json.JSON;
 import io.kylin.mdx.insight.common.util.Utils;
 import io.kylin.mdx.insight.core.dao.CommonDimRelationMapper;
 import io.kylin.mdx.insight.core.entity.CommonDimRelation;

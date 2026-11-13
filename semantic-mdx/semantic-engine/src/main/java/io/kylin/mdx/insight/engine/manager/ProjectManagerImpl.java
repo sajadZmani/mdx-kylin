@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.engine.manager;
 
-import com.alibaba.fastjson.JSON;
+import io.kylin.mdx.insight.common.json.JSON;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import io.kylin.mdx.insight.common.SemanticConfig;

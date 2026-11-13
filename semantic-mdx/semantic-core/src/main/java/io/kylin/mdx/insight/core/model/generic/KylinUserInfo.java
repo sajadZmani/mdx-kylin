@@ -19,8 +19,8 @@
 
 package io.kylin.mdx.insight.core.model.generic;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import io.kylin.mdx.insight.common.json.JSONArray;
+import io.kylin.mdx.insight.common.json.JSONObject;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

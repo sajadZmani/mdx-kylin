@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.server.controller;
 
-import com.alibaba.fastjson.JSONObject;
+import io.kylin.mdx.insight.common.json.JSONObject;
 import io.kylin.mdx.insight.base.BaseEnvSetting;
 import io.kylin.mdx.insight.core.service.AuthService;
 import io.kylin.mdx.insight.core.service.BrokenService;

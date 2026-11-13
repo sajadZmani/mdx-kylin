@@ -19,9 +19,9 @@
 
 package io.kylin.mdx.insight.core.meta.acl;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import io.kylin.mdx.insight.common.json.JSON;
+import io.kylin.mdx.insight.common.json.JSONArray;
+import io.kylin.mdx.insight.common.json.JSONObject;
 import io.kylin.mdx.insight.common.http.HttpUri;
 import io.kylin.mdx.insight.common.util.Utils;
 import io.kylin.mdx.insight.core.entity.RoleType;

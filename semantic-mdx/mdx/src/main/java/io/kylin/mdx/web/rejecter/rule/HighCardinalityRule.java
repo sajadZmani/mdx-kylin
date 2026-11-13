@@ -1,6 +1,6 @@
 //package io.kylin.mdx.web.rejecter.rule;
 //
-//import com.alibaba.fastjson.JSON;
+//import io.kylin.mdx.insight.common.json.JSON;
 //import SemanticConfig;
 //import io.kylin.mdx.insight.core.model.semantic.SemanticDataset;
 //import io.kylin.mdx.insight.core.service.SemanticContext;

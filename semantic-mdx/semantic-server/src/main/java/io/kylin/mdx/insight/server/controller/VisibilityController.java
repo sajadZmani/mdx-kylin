@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.server.controller;
 
-import com.alibaba.fastjson.JSON;
+import io.kylin.mdx.insight.common.json.JSON;
 import io.kylin.mdx.insight.common.SemanticConstants;
 import io.kylin.mdx.insight.common.SemanticException;
 import io.kylin.mdx.insight.common.SemanticOmitDetailException;
