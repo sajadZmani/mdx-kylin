@@ -19,7 +19,7 @@
 
 package io.kylin.mdx.insight.common.http;
 
-import com.alibaba.fastjson.JSONObject;
+import io.kylin.mdx.insight.common.json.JSONObject;
 import io.kylin.mdx.insight.common.SemanticConfig;
 import io.kylin.mdx.insight.common.SemanticException;
 import io.kylin.mdx.insight.common.constants.ErrorConstants;
@@ -154,6 +154,22 @@ public class HttpUtil {
             httpGet = new HttpGet(buildFullURI(getHttpAPI(uri), nameValuePairs));
         }
         prepareHttpHeaders(httpGet, auth);
+        return execute(httpGet);
+    }
+
+    /**
+     * GET with an explicit Accept media type. Kylin 5 selects the controller version by media type,
+     * e.g. "application/vnd.apache.kylin-v2+json" for the v2 (Kylin 3/4 compatible) metadata API.
+     */
+    public static CloseableHttpResponse httpGetWithAccept(String uri, byte[] auth, String accept) throws SemanticException {
+        if (StringUtils.isBlank(uri)) {
+            throw new SemanticException(HTTP_URL_NOT_ALLOW_EMPTY);
+        }
+        HttpGet httpGet = new HttpGet(buildFullURI(getHttpAPI(uri), null));
+        prepareHttpHeaders(httpGet, auth);
+        if (StringUtils.isNotBlank(accept)) {
+            httpGet.setHeader("Accept", accept);
+        }
         return execute(httpGet);
     }
 

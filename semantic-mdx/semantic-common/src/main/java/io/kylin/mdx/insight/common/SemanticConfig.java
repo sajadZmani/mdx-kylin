@@ -86,6 +86,14 @@ public class SemanticConfig extends SemanticConfigBase {
         return getOptional("insight.kylin.port", "7070");
     }
 
+    /**
+     * Major version of the Kylin server. "5" (default) uses the Kylin 5 v2-compatible REST API,
+     * "4" keeps the original Kylin 4 "/mdx" endpoints.
+     */
+    public int getKylinVersion() {
+        return getIntValue("insight.kylin.version", 5);
+    }
+
     public DatasourceTypeEnum getDatasourceType() {
         return DatasourceTypeEnum.KYLIN;
     }

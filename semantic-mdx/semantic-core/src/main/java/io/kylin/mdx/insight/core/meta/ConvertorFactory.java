@@ -29,11 +29,14 @@ public class ConvertorFactory {
         DatasourceTypeEnum datasourceType = SemanticConfig.getInstance().getDatasourceType();
         boolean convertorMock = SemanticConfig.getInstance().isConvertorMock();
         String convertType = convertorMock ? datasourceType.toString() + "_MOCK" : datasourceType.toString();
+        if (!convertorMock && SemanticConfig.getInstance().getKylinVersion() >= 5) {
+            convertType = convertType + "5";
+        }
         return ConvertorType.valueOf(convertType).getConvertor();
     }
 
     public enum ConvertorType {
-        KYLIN(new KylinConvertor()), KYLIN_MOCK(new KylinConvertorMock());
+        KYLIN(new KylinConvertor()), KYLIN5(new Kylin5Convertor()), KYLIN_MOCK(new KylinConvertorMock());
 
         private final IConvertor convertor;
 
